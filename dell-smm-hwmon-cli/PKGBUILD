@@ -1,0 +1,27 @@
+# Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
+pkgname=dell-smm-hwmon-cli
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="dell_smm utility which together with a patched dell-smm-hwmon kernel module can be
+used to disable BIOS fan control on some Dell laptops."
+url='https://github.com/vitorafsr/i8kutils/issues/6/'
+arch=('x86_64')
+license=('GPL')
+depends=('glibc')
+optdepends=('dell-smm-hwmon-lts: Patched Dell SMM hwmon module for LTS kernel'
+            'dell-smm-hwmon: Patched Dell SMM hwmon module for ARCH (standard) kernel'
+            'i8kutils: Fan control for Dell laptops')
+conflicts=('dell-smm-hwmon-i8kutils' 'i8kutils-smm')
+source=('smm.c')
+sha256sums=('d844f5592dac3695b4662e2570332c42b57d8fe99e31095d08c8a4cf97ea24ce')
+
+build() {
+  cd "$srcdir"
+  gcc -o dell_smm smm.c
+}
+
+package() {
+  mkdir -p "${pkgdir}/usr/bin/"
+  cp "${srcdir}/dell_smm" "${pkgdir}/usr/bin/"
+}
+

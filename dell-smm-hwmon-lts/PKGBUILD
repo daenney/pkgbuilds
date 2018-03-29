@@ -1,0 +1,45 @@
+# Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
+pkgname=dell-smm-hwmon-lts
+pkgver=4.14.30
+pkgrel=1
+pkgdesc="Patched version of the Dell SMM hwmon kernel module. This allows to disable the BIOS
+fan controller on some Dell laptops so that the i8kutils driver can work without conflicts."
+url='https://github.com/vitorafsr/i8kutils/issues/6/'
+arch=('x86_64')
+license=('GPL')
+depends=("linux-lts=${pkgver}-${pkgrel}")
+optdepends=('dell-smm-hwmon-cli: CLI to send SMM control commands'
+            'i8kutils: Fan control for Dell laptops')
+makedepends=('bc' "linux-lts-headers=${pkgver}-${pkgrel}")
+conflicts=('dell-smm-hwmon-i8kutils')
+install='dell-smm-hwmon-lts.install'
+source=("https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-$pkgver.tar.xz"
+        "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-$pkgver.tar.sign"
+        'dell-smm-hwmon.patch')
+sha256sums=('SKIP'
+            'SKIP'
+            '52ee6a4558e9b5e4e3fe9bc2433baa67cde1190b2be846c649368ba796ad09d7')
+validpgpkeys=('ABAF11C65A2970B130ABE3C479BE3E4300411886'
+              '647F28654894E3BD457199BE38DBBDC86092693E')
+
+
+prepare() {
+  cd "$srcdir/linux-$pkgver"
+  patch -p0 < ../dell-smm-hwmon.patch
+  make mrproper
+  cp "/usr/lib/modules/${pkgver}-${pkgrel}-lts/build/.config" ./
+  cp "/usr/lib/modules/${pkgver}-${pkgrel}-lts/build/Module.symvers" ./
+}
+
+build() {
+  cd "$srcdir/linux-$pkgver"
+  EXTRAVERSION=-${pkgrel} make modules_prepare
+  make M=drivers/hwmon
+  gzip ./drivers/hwmon/dell-smm-hwmon.ko
+}
+
+package() {
+  mkdir -p "${pkgdir}/usr/lib/modules/${pkgver}-${pkgrel}-lts/updates/"
+  cp "${srcdir}/linux-$pkgver/drivers/hwmon/dell-smm-hwmon.ko.gz" "${pkgdir}/usr/lib/modules/${pkgver}-${pkgrel}-lts/updates/"
+}
+
