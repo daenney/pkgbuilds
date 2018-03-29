@@ -44,6 +44,17 @@ building the package.
 Please note that loading a patched kernel module (for an in-tree module) will
 result in the kernel being marked as tainted.
 
+The `dell-smm-hwmon` kernel module does a DMI check in order to decide whether
+it can be loaded for your system. This usually means that when newer hardware
+comes out the module will refuse to load until a patch is sent upstream to the
+maintainers of the `hwmon/` part of the kernel tree.
+
+Try loading the module with a `modprobe dell-smm-hwmon`. If that doesn't work
+create `/etc/modprobe.d/dell-smm-hwmon.conf` with the following content:
+`options dell-smm-hwmon ignore_dmi=1`, and try to load the module. This will
+disable the DMI check and essentially forcefully load the module. You'll see
+an entry in `/proc` appear, `/proc/i8k`.
+
 ## Licensing
 
 Though the `PKGBUILD` files are licensed according to the `LICENSE` file, some
