@@ -12,7 +12,6 @@ optdepends=('dell-smm-hwmon-cli: CLI to send SMM control commands'
             'i8kutils: Fan control for Dell laptops')
 makedepends=('bc' "linux-lts-headers=${pkgver}-${pkgrel}")
 conflicts=('dell-smm-hwmon-i8kutils')
-install='dell-smm-hwmon-lts.install'
 source=("https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-$pkgver.tar.xz"
         "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-$pkgver.tar.sign"
         'dell-smm-hwmon.patch')
