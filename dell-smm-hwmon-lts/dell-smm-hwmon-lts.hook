@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = linux-lts
+
+[Action]
+Description = Please rebuild dell-smm-hwmon-lts to match this kernel
+When = PostTransaction
+Exec = /bin/true

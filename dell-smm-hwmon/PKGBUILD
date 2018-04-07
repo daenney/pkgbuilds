@@ -7,17 +7,18 @@ fan controller on some Dell laptops so that the i8kutils driver can work without
 url='https://github.com/vitorafsr/i8kutils/issues/6/'
 arch=('x86_64')
 license=('GPL')
-depends=("linux=${pkgver}-${pkgrel}")
 optdepends=('dell-smm-hwmon-cli: CLI to send SMM control commands'
             'i8kutils: Fan control for Dell laptops')
-makedepends=('bc' "linux-headers=${pkgver}-${pkgrel}")
+makedepends=('bc' "linux=${pkgver}-${pkgrel}" "linux-headers=${pkgver}-${pkgrel}")
 conflicts=('dell-smm-hwmon-i8kutils')
 source=("https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-$pkgver.tar.xz"
         "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-$pkgver.tar.sign"
-        'dell-smm-hwmon.patch')
+        'dell-smm-hwmon.patch'
+        'dell-smm-hwmon.hook')
 sha256sums=('SKIP'
             'SKIP'
-            '52ee6a4558e9b5e4e3fe9bc2433baa67cde1190b2be846c649368ba796ad09d7')
+            '52ee6a4558e9b5e4e3fe9bc2433baa67cde1190b2be846c649368ba796ad09d7'
+            'c1438514e2ce241dc9c6652d65663dfad6666cced8597b327e3cf2c3b1058e01')
 validpgpkeys=('ABAF11C65A2970B130ABE3C479BE3E4300411886'
               '647F28654894E3BD457199BE38DBBDC86092693E')
 
@@ -40,5 +41,8 @@ build() {
 package() {
   mkdir -p "${pkgdir}/usr/lib/modules/${pkgver}-${pkgrel}-ARCH/updates/"
   cp "${srcdir}/linux-$pkgver/drivers/hwmon/dell-smm-hwmon.ko.gz" "${pkgdir}/usr/lib/modules/${pkgver}-${pkgrel}-ARCH/updates/"
+
+  # install pacman hook
+  install -Dm644 dell-smm-hwmon.hook "${pkgdir}/usr/share/libalpm/hooks/dell-smm-hwmon.hook"
 }
 
