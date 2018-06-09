@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=dell-smm-hwmon
 pkgver=4.16.13
-pkgrel=1
+pkgrel=2
 pkgdesc="Patched version of the Dell SMM hwmon kernel module. This allows to disable the BIOS
 fan controller on some Dell laptops so that the i8kutils driver can work without conflicts."
 url='https://github.com/vitorafsr/i8kutils/issues/6/'
