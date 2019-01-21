@@ -1,0 +1,25 @@
+# Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
+pkgname=librdkafka
+pkgver=0.11.6
+pkgrel=1
+pkgdesc='Apache Kafka C driver library'
+url="https://github.com/edenhill/librdkafka"
+arch=('x86_64')
+license=('BSD')
+source=(https://github.com/edenhill/librdkafka/archive/v${pkgver}.tar.gz)
+depends=(glibc lz4 zlib libsasl)
+optdepends=('openssl: SSL/TLS support')
+makedepends=(bash openssl python)
+sha256sums=('9c0afb8b53779d968225edf1e79da48a162895ad557900f75e7978f65e642032')
+
+build() {
+  cd librdkafka-${pkgver}
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd librdkafka-${pkgver}
+  make install DESTDIR="$pkgdir"
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
