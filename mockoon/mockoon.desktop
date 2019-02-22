@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Mockoon
-Comment=Let you easily mock APIs, locally.
-Exec=env DESKTOPINTEGRATION=no /opt/appimages/mockoon.AppImage
-Terminal=false
-Type=Application
-Icon=mockoon
-StartupWMClass=Mockoon
-Categories=Development;Network;
