@@ -20,7 +20,7 @@ source=(
     'privacy.conf'
 )
 sha256sums=(
-    'bfe395131b4c452b263c54b6d572ceed3d4b11effc07e314e4e7aafb8115e316'
+    'b836fcc57962c8e95940ec943fc51e505b9daeffe0ea37d489ea171790cdc453'
     '6f0ac6afd833b89c6e7ed2d7ada32b241d9e279fcd7a6e39a6c9feb77a15160e'
 )
 
