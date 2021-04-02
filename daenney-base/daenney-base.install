@@ -1,0 +1,64 @@
+enable() {
+	if ! systemctl is-enabled -q "$1"; then
+		echo ":: systemd enabling: $1"
+		systemctl enable -q "$1"
+	fi
+}
+
+configure_resolved() {
+	echo ':: configuring DNS resolver'
+	file='/etc/systemd/resolved.conf'
+	# Disable fallback DNS, don't want to use some random provider
+	sed -i '/#FallbackDNS/c\FallbackDNS= ' "$file"
+	# Don't advertise/respond to LLMNR or zeroconf/mDNS
+	sed -i '/#LLMNR/c\LLMNR=resolve' "$file"
+	sed -i '/#MulticastDNS/c\MulticastDNS=resolve' "$file"
+	# Try DNSoverTLS, but don't require it just yet
+	sed -i '/#DNSOverTLS/c\DNSOverTLS=opportunistic' "$file"
+	# Disable DNSSEC, it's just broken in resolved
+	sed -i '/#DNSSEC/c\DNSSEC=false' "$file"
+
+	ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+}
+
+configure_timesyncd() {
+	echo ':: configuring NTP'
+	file='/etc/systemd/timesyncd.conf'
+	# Use Google NTP
+	sed -i '/#NTP/c\NTP=time1.google.com time2.google.com time3.google.com time4.google.com' "$file"
+	# Disable fallback NTP
+	sed -i '/#FallbackNTP/c\FallbackNTP= ' "$file"
+}
+
+configure_sshd() {
+	echo ':: configuring OpenSSH server'
+	file='/etc/ssh/sshd_config'
+	sed -i '/Port 22/s/^#*//g' "$file"
+	sed -i '/ssh_host_ed25519/s/^#*//g' "$file"
+	sed -i '/ssh_host_rsa/d' "$file"
+	sed -i '/ssh_host_ecdsa/d' "$file"
+	sed -i '/PubkeyAuthentication/s/^#*//g' "$file"
+	sed -i '/#RekeyLimit/c\RekeyLimit 1G 1h' "$file"
+	sed -i '/#PasswordAuthentication/c\PasswordAuthentication no' "$file"
+	sed -i '/PermitEmptyPasswords/s/^#*//g' "$file"
+	sed -i '/#AllowAgentForwarding/c\AllowAgentForwarding no' "$file"
+	sed -i '/#AllowTcpForwarding/c\AllowTcpForwarding no' "$file"
+	sed -i '/#PrintLastLog/c\PrintLastLog no' "$file"
+	sed -i '/UseDNS/s/^#*//g' "$file"
+
+	grep -qw '^HostKeyAlgorithms' "$file" || echo 'HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-ed25519' >> "$file"
+	grep -qw '^Ciphers' "$file" || echo 'Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr' >> "$file"
+	grep -qw '^KexAlgorithms' "$file" || echo 'KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256' >> "$file"
+	grep -qw '^MACs' "$file" || echo 'MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com' >> "$file"
+}
+
+post_install() {
+	configure_resolved
+	configure_timesyncd
+	configure_sshd
+
+	enable systemd-timesyncd.service
+	enable systemd-resolved.service
+	enable sshd.service
+	enable fwupd.service
+}

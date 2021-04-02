@@ -1,0 +1,112 @@
+# Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
+pkgname=daenney-desktop
+pkgver=1
+pkgrel=1
+pkgdesc='My default desktop'
+url="https://github.com/daenney/pkgbuilds"
+arch=('any')
+license=('MIT')
+depends=(
+    daenney-base
+    pipewire
+    pipewire-alsa
+    pipewire-jack
+    pipewire-pulse
+    libpipewire02
+    xdg-desktop-portal-gtk # needs to come early to avoid provider prompt for xdg-desktop-impl
+    xdg-desktop-portal
+    arch-audit-gtk
+    calibre
+    chromium
+    dconf-editor
+    dhclient
+    docker
+    element-desktop
+    flatpak
+    firefox
+    hunspell
+    hunspell-en_gb
+    hunspell-nl
+    hunspell-sv
+    jitsi-meet-desktop-bin # AUR
+    gdm
+    glfw-wayland
+    glew
+    gnome-backgrounds
+    gnome-control-center
+    gnome-calculator
+    gnome-characters
+    gnome-color-manager
+    gnome-screenshot
+    gnome-firmware
+    gnome-font-viewer
+    gnome-initial-setup
+    gnome-keyring
+    gnome-menus
+    gnome-screenshot
+    gnome-shell
+    gnome-shell-extensions
+    gnome-shell-extension-appindicator
+    gnome-software
+    gnome-software-packagekit-plugin
+    gnome-weather
+    gnome-terminal
+    gnome-tweaks
+    gnome-video-effects
+    go
+    gstreamer
+    gst-libav
+    gst-plugins-bad
+    gst-plugins-good
+    gst-plugins-ugly 
+    gthumb
+    gtk3
+    gtk4
+    libreoffice-fresh
+    mousetweaks
+    noto-fonts
+    noto-fonts-cjk
+    nautilus
+    nftables
+    onedrive-abraunegg # AUR
+    pavucontrol
+    phonon-qt5-gstreamer # needs to come before phonon-qt5, use gstreamer backend for HW accel
+    phonon-qt5
+    plymouth-git # AUR
+    gdm-plymouth # AUR
+    samsung-unified-driver # AUR
+    seahorse    
+    shared-mime-info-gnome
+    systemd-boot-pacman-hook # AUR
+    qt5-wayland
+    tpm2-tools
+    ttf-jetbrains-mono
+    ttf-joypixels
+    visual-studio-code-bin # AUR
+    xf86-input-libinput
+    xorg-server-xwayland
+    xdg-user-dirs-gtk
+    xdg-utils
+    zathura
+    zathura-pdf-mupdf
+)
+optdepends=(
+    'intel-cpu: Intel CPU support'
+    'intel-graphics: Intel GPU support'
+    'amd-cpu: AMD CPU support'
+    'amd-graphics: AMD GPU support'
+)
+install=daenney-desktop.install
+source=(
+    'dhcp-client.conf'
+    'privacy.conf'
+)
+sha256sums=(
+    '836a618d2f3cb21ed19880657088e8a4701d7efafc3582f0cd7169b56788f4b8'
+    'bd65203c2a08eee2ed9b2a09bc656c849fc56f10590df15576abeb6105717a83'
+)
+
+package() {
+     install -D -m0644 'dhcp-client.conf' "${pkgdir}/etc/NetworkManager/conf.d/dhcp-client.conf"
+     install -D -m0644 'privacy.conf' "${pkgdir}/etc/NetworkManager/conf.d/privacy.conf"
+}

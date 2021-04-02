@@ -1,0 +1,14 @@
+# Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
+pkgname=intel-graphics
+pkgver=1
+pkgrel=1
+pkgdesc='Packages and configuration for systems with Intel GPUs'
+url="https://github.com/daenney/pkgbuilds"
+arch=('any')
+license=('MIT')
+depends=(
+    mesa vulkan-intel
+    intel-media-driver
+    xf86-video-intel
+    libva-utils
+)

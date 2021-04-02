@@ -1,0 +1,13 @@
+# Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
+pkgname=intel-cpu
+pkgver=1
+pkgrel=1
+pkgdesc='Packages and configuration for systems with Intel CPUs'
+url="https://github.com/daenney/pkgbuilds"
+arch=('x86_64')
+license=('MIT')
+depends=(
+    intel-ucode
+    thermald
+)
+install=intel-cpu.install

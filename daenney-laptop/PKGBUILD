@@ -1,0 +1,30 @@
+pkgname=daenney-laptop
+pkgver=1
+pkgrel=1
+pkgdesc='My default laptop'
+url="https://github.com/daenney/pkgbuilds"
+arch=('any')
+license=('MIT')
+depends=(
+    daenney-desktop
+    firewalld
+    iwd
+    networkmanager
+    nm-connection-editor
+    usbguard
+)
+install=daenney-laptop.install
+
+source=(
+    'dhcp-client.conf'
+    'privacy.conf'
+)
+sha256sums=(
+    '836a618d2f3cb21ed19880657088e8a4701d7efafc3582f0cd7169b56788f4b8'
+    'bd65203c2a08eee2ed9b2a09bc656c849fc56f10590df15576abeb6105717a83'
+)
+
+package() {
+     install -D -m0644 'dhcp-client.conf' "${pkgdir}/etc/NetworkManager/conf.d/dhcp-client.conf"
+     install -D -m0644 'privacy.conf' "${pkgdir}/etc/NetworkManager/conf.d/privacy.conf"
+}

@@ -1,0 +1,48 @@
+# Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
+pkgname=daenney-base
+pkgver=1
+pkgrel=1
+pkgdesc='Packages and configuration for all my systems'
+url="https://github.com/daenney/pkgbuilds"
+arch=('any')
+license=('MIT')
+depends=(
+    mkinitcpio # needs to be first in order to avoid provider prompt for initramfs
+    base
+    btrfs-progs
+    ca-certificates
+    diff-so-fancy
+    dmidecode
+    dosfstools
+    dnssec-anchors
+    efivar
+    fish
+    fwupd
+    git
+    libfido2
+    libu2f-host
+    ldns
+    linux
+    linux-firmware
+    lm_sensors
+    man
+    neovim
+    openssh
+    openssl
+    pam-u2f
+    pciutils
+    sbsigntools
+    sudo
+    systemd-resolvconf
+    tmux
+    usbutils
+    which
+)
+optdepends=(
+    'amd-cpu: AMD CPU support'
+    'amd-graphics: AMD GPU support'
+    'intel-cpu: Intel CPU support'
+    'intel-graphics: Intel GPU support'
+)
+
+install=daenney-base.install

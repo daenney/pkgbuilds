@@ -1,0 +1,11 @@
+# Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
+pkgname=amd-cpu
+pkgver=1
+pkgrel=1
+pkgdesc='Packages and configuration for systems with AMD CPUs'
+url="https://github.com/daenney/pkgbuilds"
+arch=('x86_64')
+license=('MIT')
+depends=(
+    amd-ucode
+)

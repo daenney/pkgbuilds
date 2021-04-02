@@ -1,0 +1,4 @@
+post_install() {
+    echo ":: systemd enabling: thermald"
+    systemctl enable -q thermald
+}

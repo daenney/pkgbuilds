@@ -1,0 +1,22 @@
+enable() {
+	if ! systemctl is-enabled -q "$1"; then
+        echo ":: systemd enabling: $1"
+		systemctl enable -q "$1"
+	fi
+}
+
+configure_usbguard() {
+    if test -s "/etc/usbguard/rules.conf"; then
+        echo ':: generating USBGuard policy b/c rules.conf is empty'
+        usbguard generate-policy > /etc/usbguard/rules.conf
+    fi
+}
+
+post_install() {
+    configure_usbguard
+
+    enable iwd.service
+    enable firewalld.service
+    enable NetworkManager.service
+    enable usbguard.service
+}
