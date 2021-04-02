@@ -13,11 +13,13 @@ depends=(
     pipewire-jack
     pipewire-pulse
     libpipewire02
+    ttf-joypixels
+    noto-fonts
+    cantarell-fonts
     xdg-desktop-portal-gtk # needs to come early to avoid provider prompt for xdg-desktop-impl
     xdg-desktop-portal
     arch-audit-gtk
     calibre
-    cantarell-fonts
     chromium
     dconf-editor
     dhclient
@@ -65,7 +67,6 @@ depends=(
     gtk4
     libreoffice-fresh
     mousetweaks
-    noto-fonts
     noto-fonts-cjk
     noto-fonts-extra
     nautilus
@@ -85,7 +86,6 @@ depends=(
     tpm2-tools
     trash-cli
     ttf-jetbrains-mono
-    ttf-joypixels
     visual-studio-code-bin # AUR
     wl-clipboard
     xf86-input-libinput
