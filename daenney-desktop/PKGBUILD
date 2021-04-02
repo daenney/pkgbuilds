@@ -17,6 +17,7 @@ depends=(
     xdg-desktop-portal
     arch-audit-gtk
     calibre
+    cantarell-fonts
     chromium
     dconf-editor
     dhclient

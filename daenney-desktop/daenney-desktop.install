@@ -27,9 +27,15 @@ configure_emoji() {
     ln -sf /etc/fonts/conf.avail/75-joypixels.conf /etc/fonts/conf.d/75-joypixels.conf
 }
 
+configure_plymouth() {
+    echo ':: setting Plymouth theme to BGRT'
+    plymouth-set-default-theme bgrt
+}
+
 post_install() {
     configure_emoji
     configure_hw_accel
+    configure_plymouth
     configure_wayland
 
     enable firewalld.service
