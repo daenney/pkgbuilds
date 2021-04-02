@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
 pkgver=1
-pkgrel=1
+pkgrel=2
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -27,7 +27,7 @@ depends=(
     hunspell
     hunspell-en_gb
     hunspell-nl
-    hunspell-sv
+    hunspell-sv # AUR
     jitsi-meet-desktop-bin # AUR
     gdm
     glfw-wayland
@@ -66,6 +66,7 @@ depends=(
     mousetweaks
     noto-fonts
     noto-fonts-cjk
+    noto-fonts-extra
     nautilus
     nftables
     onedrive-abraunegg # AUR
@@ -76,15 +77,18 @@ depends=(
     gdm-plymouth # AUR
     samsung-unified-driver # AUR
     seahorse    
-    shared-mime-info-gnome
+    shared-mime-info-gnome # AUR
+    system-config-printer
     systemd-boot-pacman-hook # AUR
     qt5-wayland
     tpm2-tools
+    trash-cli
     ttf-jetbrains-mono
     ttf-joypixels
     visual-studio-code-bin # AUR
+    wl-clipboard
     xf86-input-libinput
-    xorg-server-xwayland
+    xorg-xwayland
     xdg-user-dirs-gtk
     xdg-utils
     zathura
@@ -97,16 +101,3 @@ optdepends=(
     'amd-graphics: AMD GPU support'
 )
 install=daenney-desktop.install
-source=(
-    'dhcp-client.conf'
-    'privacy.conf'
-)
-sha256sums=(
-    '836a618d2f3cb21ed19880657088e8a4701d7efafc3582f0cd7169b56788f4b8'
-    'bd65203c2a08eee2ed9b2a09bc656c849fc56f10590df15576abeb6105717a83'
-)
-
-package() {
-     install -D -m0644 'dhcp-client.conf' "${pkgdir}/etc/NetworkManager/conf.d/dhcp-client.conf"
-     install -D -m0644 'privacy.conf' "${pkgdir}/etc/NetworkManager/conf.d/privacy.conf"
-}

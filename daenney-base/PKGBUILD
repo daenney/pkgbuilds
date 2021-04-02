@@ -1,13 +1,14 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
 pkgver=1
-pkgrel=1
+pkgrel=2
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
 license=('MIT')
 depends=(
     mkinitcpio # needs to be first in order to avoid provider prompt for initramfs
+    man-db
     base
     btrfs-progs
     ca-certificates
@@ -20,7 +21,6 @@ depends=(
     fwupd
     git
     libfido2
-    libu2f-host
     ldns
     linux
     linux-firmware
