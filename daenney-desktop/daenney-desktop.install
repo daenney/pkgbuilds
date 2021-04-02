@@ -38,8 +38,5 @@ post_install() {
     configure_plymouth
     configure_wayland
 
-    enable firewalld.service
     enable gdm.service
-    enable NetworkManager.service
-    enable usbguard.service
 }
