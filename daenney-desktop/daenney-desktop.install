@@ -5,6 +5,12 @@ enable() {
 	fi
 }
 
+configure_editor() {
+    echo ':: configuring EDITOR'
+    file='/etc/environment'
+    grep -qw '^EDITOR' "$file" || echo 'EDITOR=nvim' >> "$file"
+}
+
 configure_hw_accel() {
     echo ':: configuring hardware accelerated video'
     file='/etc/environment'
@@ -37,6 +43,7 @@ post_install() {
     configure_hw_accel
     configure_plymouth
     configure_wayland
+    configure_editor
 
     enable gdm.service
 }
