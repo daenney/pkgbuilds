@@ -1,0 +1,10 @@
+configure_drivers() {
+    echo ':: configuring VA-API/VDPAU drivers'
+    file='/etc/environment'
+    grep -qw '^LIBVA_DRIVER_NAME' "$file" || echo 'LIBVA_DRIVER_NAME=radeonsi' >> "$file"
+    grep -qw '^VDPAU_DRIVER' "$file" || echo 'VDPAU_DRIVER=radeonsi' >> "$file"
+}
+
+post_install() {
+    configure_drivers
+}
