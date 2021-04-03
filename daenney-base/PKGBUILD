@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
 pkgver=1
-pkgrel=2
+pkgrel=3
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -16,6 +16,7 @@ depends=(
     dmidecode
     dosfstools
     dnssec-anchors
+    efitools
     efivar
     fish
     fwupd
@@ -26,12 +27,14 @@ depends=(
     linux-firmware
     lm_sensors
     man
+    mokutil # AUR
     neovim
     openssh
     openssl
     pam-u2f
     pciutils
     sbsigntools
+    sbupdate-git # AUR
     sudo
     systemd-resolvconf
     tmux
