@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
 pkgver=1
-pkgrel=6
+pkgrel=7
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -70,10 +70,10 @@ depends=(
     gtk4
     libreoffice-fresh
     mousetweaks
-    noto-fonts-cjk
-    noto-fonts-extra
     nautilus
     nftables
+    noto-fonts-cjk
+    noto-fonts-extra
     nss-mdns
     onedrive-abraunegg # AUR
     pacman-contrib
@@ -85,6 +85,7 @@ depends=(
     samsung-unified-driver # AUR
     seahorse    
     shared-mime-info-gnome # AUR
+    sushi
     system-config-printer
     systemd-boot-pacman-hook # AUR
     qt5-wayland
