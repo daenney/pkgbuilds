@@ -52,5 +52,5 @@ post_install() {
     configure_editor
 
     enable gdm.service
-    enable avahi-daemon
+    enable avahi-daemon.service
 }
