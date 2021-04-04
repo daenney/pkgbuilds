@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
 pkgver=1
-pkgrel=3
+pkgrel=4
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -20,6 +20,7 @@ depends=(
     efivar
     fish
     fwupd
+    fzf
     git
     libfido2
     ldns
@@ -37,6 +38,7 @@ depends=(
     sbupdate-git # AUR
     sudo
     systemd-resolvconf
+    the_silver_searcher
     tmux
     usbutils
     which

@@ -12,7 +12,7 @@ configure_resolved() {
 	sed -i '/#FallbackDNS/c\FallbackDNS= ' "$file"
 	# Don't advertise/respond to LLMNR or zeroconf/mDNS
 	sed -i '/#LLMNR/c\LLMNR=resolve' "$file"
-	sed -i '/#MulticastDNS/c\MulticastDNS=resolve' "$file"
+	sed -i '/#MulticastDNS/c\MulticastDNS=no' "$file"
 	# Try DNSoverTLS, but don't require it just yet
 	sed -i '/#DNSOverTLS/c\DNSOverTLS=opportunistic' "$file"
 	# Disable DNSSEC, it's just broken in resolved

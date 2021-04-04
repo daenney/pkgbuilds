@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
 pkgver=1
-pkgrel=5
+pkgrel=6
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -19,6 +19,7 @@ depends=(
     xdg-desktop-portal-gtk # needs to come early to avoid provider prompt for xdg-desktop-impl
     xdg-desktop-portal
     arch-audit-gtk
+    avahi-daemon
     calibre
     chromium
     dconf-editor
@@ -73,6 +74,7 @@ depends=(
     noto-fonts-extra
     nautilus
     nftables
+    nss-mdns
     onedrive-abraunegg # AUR
     pacman-contrib
     pavucontrol
