@@ -19,4 +19,5 @@ post_install() {
     enable firewalld.service
     enable NetworkManager.service
     enable usbguard.service
+    enable bluetooth.service
 }
