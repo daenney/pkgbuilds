@@ -54,10 +54,10 @@ depends=(
     gnome-shell-extension-nightthemeswitcher-git # AUR
     gnome-software
     gnome-software-packagekit-plugin
-    gnome-weather
     gnome-terminal
     gnome-tweaks
     gnome-video-effects
+    gnome-weather
     go
     gstreamer
     gst-libav
