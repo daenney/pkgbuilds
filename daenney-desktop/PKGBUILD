@@ -54,6 +54,7 @@ depends=(
     gnome-shell-extension-nightthemeswitcher-git # AUR
     gnome-software
     gnome-software-packagekit-plugin
+    gnome-system-monitor
     gnome-terminal
     gnome-tweaks
     gnome-video-effects
