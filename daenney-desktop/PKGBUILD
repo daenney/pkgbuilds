@@ -44,7 +44,6 @@ depends=(
     gnome-screenshot
     gnome-firmware
     gnome-font-viewer
-    gnome-initial-setup
     gnome-keyring
     gnome-menus
     gnome-screenshot
