@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1
+pkgver=1.1
 pkgrel=9
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -25,7 +25,6 @@ depends=(
     dconf-editor
     dhclient
     docker
-    element-desktop
     flatpak
     firefox
     hunspell
