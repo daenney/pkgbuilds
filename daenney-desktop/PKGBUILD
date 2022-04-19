@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.2
-pkgrel=9
+pkgver=1.3
+pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -39,12 +39,10 @@ depends=(
     gnome-calculator
     gnome-characters
     gnome-color-manager
-    gnome-screenshot
     gnome-firmware
     gnome-font-viewer
     gnome-keyring
     gnome-menus
-    gnome-screenshot
     gnome-shell
     gnome-shell-extensions
     gnome-shell-extension-appindicator
