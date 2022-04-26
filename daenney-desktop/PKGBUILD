@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.4
+pkgver=1.5
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -8,6 +8,7 @@ arch=('any')
 license=('MIT')
 depends=(
     daenney-base
+    wireplumber
     pipewire
     pipewire-alsa
     pipewire-jack
