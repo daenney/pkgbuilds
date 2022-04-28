@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.5
+pkgver=1.6
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -25,7 +25,6 @@ depends=(
     chromium
     dconf-editor
     dhclient
-    docker
     flatpak
     firefox
     hunspell
@@ -78,6 +77,8 @@ depends=(
     phonon-qt5-gstreamer # needs to come before phonon-qt5, use gstreamer backend for HW accel
     phonon-qt5
     plymouth-git # AUR
+    podman
+    podman-docker
     gdm-plymouth # AUR
     samsung-unified-driver # AUR
     seahorse    
