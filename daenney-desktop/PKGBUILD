@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
 pkgver=1.6
-pkgrel=1
+pkgrel=2
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -23,6 +23,7 @@ depends=(
     avahi
     calibre
     chromium
+    cni-plugins
     dconf-editor
     dhclient
     flatpak
