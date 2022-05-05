@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.6
-pkgrel=2
+pkgver=1.7
+pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -17,7 +17,7 @@ depends=(
     ttf-joypixels
     noto-fonts
     cantarell-fonts
-    xdg-desktop-portal-gtk # needs to come early to avoid provider prompt for xdg-desktop-impl
+    xdg-desktop-portal-gnome # needs to come early to avoid provider prompt for xdg-desktop-impl
     xdg-desktop-portal
     arch-audit-gtk
     avahi
