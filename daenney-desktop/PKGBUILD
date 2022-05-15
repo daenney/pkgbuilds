@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.8
+pkgver=1.9
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -82,13 +82,14 @@ depends=(
     podman
     podman-docker
     gdm-plymouth # AUR
+    qgnomeplatform-qt5
+    qgnomeplatform-qt6
     samsung-unified-driver # AUR
     seahorse    
     shared-mime-info-gnome # AUR
     sushi
     system-config-printer
     systemd-boot-pacman-hook # AUR
-    qt5-wayland
     tpm2-tools
     trash-cli
     ttf-jetbrains-mono
