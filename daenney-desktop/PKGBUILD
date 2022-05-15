@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.9
+pkgver=1.10
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -26,6 +26,7 @@ depends=(
     cni-plugins
     dconf-editor
     dhclient
+    drawing
     eog
     eog-plugins
     flatpak
