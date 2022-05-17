@@ -12,6 +12,11 @@ configure_usbguard() {
     fi
 }
 
+disable_wpa_supplicant() {
+    systemctl mask -q "wpa_supplicant.service"
+    systemctl mask -q "wpa_supplicant@.service"
+}
+
 post_install() {
     configure_usbguard
 
@@ -20,4 +25,6 @@ post_install() {
     enable NetworkManager.service
     enable usbguard.service
     enable bluetooth.service
+
+    disable_wpa_supplicant
 }
