@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.11
+pkgver=1.12
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -13,7 +13,6 @@ depends=(
     pipewire-alsa
     pipewire-jack
     pipewire-pulse
-    libpipewire02
     ttf-joypixels
     noto-fonts
     cantarell-fonts
@@ -22,8 +21,6 @@ depends=(
     adw-gtk3 # AUR, set as Legacy theme in Tweaks
     arch-audit-gtk
     avahi
-    calibre
-    chromium
     cni-plugins
     dconf-editor
     dhclient
@@ -68,7 +65,6 @@ depends=(
     gst-plugins-ugly 
     gtk3
     gtk4
-    libreoffice-fresh
     mousetweaks
     nautilus
     nftables
@@ -95,7 +91,6 @@ depends=(
     tpm2-tools
     trash-cli
     ttf-jetbrains-mono
-    visual-studio-code-bin # AUR
     webp-pixbuf-loader
     wl-clipboard
     xf86-input-libinput
