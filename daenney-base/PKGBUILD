@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1
-pkgrel=4
+pkgver=1.1
+pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -27,7 +27,7 @@ depends=(
     linux
     linux-firmware
     lm_sensors
-    man
+    man-pages
     mokutil # AUR
     mosh
     neovim
@@ -35,6 +35,7 @@ depends=(
     openssl
     pam-u2f
     pciutils
+    pwgen
     sbsigntools
     sbupdate-git # AUR
     sudo
@@ -43,6 +44,7 @@ depends=(
     tmux
     usbutils
     which
+    whois
 )
 optdepends=(
     'amd-cpu: AMD CPU support'
