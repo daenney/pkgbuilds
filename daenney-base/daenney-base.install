@@ -7,27 +7,45 @@ enable() {
 
 configure_resolved() {
 	echo ':: configuring DNS resolver'
-	file='/etc/systemd/resolved.conf'
+
+	# Create drop-in directory
+	mkdir -p /etc/systemd/resolved.conf.d
+
+	file='/etc/systemd/resolved.conf.d/local.conf'
+
+	grep -qw '^[Resolve]' "$file" || echo '[Resolve]' >> "$file"
+
 	# Disable fallback DNS, don't want to use some random provider
-	sed -i '/#FallbackDNS/c\FallbackDNS= ' "$file"
+	grep -qw '^FallbackDNS' "$file" || echo 'FallbackDNS= ' >> "$file"
+
 	# Don't advertise/respond to LLMNR or zeroconf/mDNS
-	sed -i '/#LLMNR/c\LLMNR=resolve' "$file"
-	sed -i '/#MulticastDNS/c\MulticastDNS=no' "$file"
+	grep -qw '^LLMNR' "$file" || echo 'LLMNR=resolve' >> "$file"
+	grep -qw '^MulticastDNS' "$file" || echo 'MulticastDNS=no' >> "$file"
+
 	# Try DNSoverTLS, but don't require it just yet
-	sed -i '/#DNSOverTLS/c\DNSOverTLS=opportunistic' "$file"
+	grep -qw '^DNSOverTLS' "$file" || echo 'DNSOverTLS=opportunistic' >> "$file"
+
 	# Disable DNSSEC, it's just broken in resolved
-	sed -i '/#DNSSEC/c\DNSSEC=false' "$file"
+	grep -qw '^DNSSEC' "$file" || echo 'DNSSEC=false' >> "$file"
 
 	ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 }
 
 configure_timesyncd() {
 	echo ':: configuring NTP'
-	file='/etc/systemd/timesyncd.conf'
+
+	# Create drop-in directory
+	mkdir -p /etc/systemd/timesyncd.conf.d
+
+	file='/etc/systemd/timesyncd.conf.d/local.conf'
+
+	grep -qw '^[Time]' "$file" || echo '[Time]' >> "$file"
+
 	# Use Google NTP
-	sed -i '/#NTP/c\NTP=time1.google.com time2.google.com time3.google.com time4.google.com' "$file"
+	grep -qw '^NTP' "$file" || echo 'NTP=time1.google.com time2.google.com time3.google.com time4.google.com' >> "$file"
+
 	# Disable fallback NTP
-	sed -i '/#FallbackNTP/c\FallbackNTP= ' "$file"
+	grep -qw '^FallbackNTP' "$file" || echo 'FallbackNTP= ' >> "$file"
 }
 
 configure_sshd() {
