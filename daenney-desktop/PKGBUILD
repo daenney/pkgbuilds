@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.12
+pkgver=1.13
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -59,10 +59,12 @@ depends=(
     gnome-weather
     go
     gstreamer
+    gstreamer-vaapi
     gst-libav
     gst-plugins-bad
     gst-plugins-good
     gst-plugins-ugly 
+    gst-plugin-pipewire
     gtk3
     gtk4
     mousetweaks
