@@ -29,6 +29,7 @@ depends=(
     lm_sensors
     man
     mokutil # AUR
+    mosh
     neovim
     openssh
     openssl
