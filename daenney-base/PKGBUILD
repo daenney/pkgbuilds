@@ -16,6 +16,7 @@ depends=(
     dmidecode
     dosfstools
     dnssec-anchors
+    dog
     efitools
     efivar
     fish
@@ -23,7 +24,6 @@ depends=(
     fzf
     git
     libfido2
-    ldns
     linux
     linux-firmware
     lm_sensors
