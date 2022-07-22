@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1.1
+pkgver=1.2
 pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
@@ -10,6 +10,7 @@ depends=(
     mkinitcpio # needs to be first in order to avoid provider prompt for initramfs
     man-db
     base
+    atool
     btrfs-progs
     ca-certificates
     diff-so-fancy
@@ -42,6 +43,7 @@ depends=(
     systemd-resolvconf
     the_silver_searcher
     tmux
+    unzip
     usbutils
     which
     whois
