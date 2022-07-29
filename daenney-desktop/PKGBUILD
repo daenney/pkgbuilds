@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.15
+pkgver=1.16
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -83,7 +83,7 @@ depends=(
     plymouth-git # AUR
     podman
     podman-docker
-    gdm-plymouth # AUR
+    gdm-plymouth-nox # AUR
     qgnomeplatform-qt5
     qgnomeplatform-qt6
     samsung-unified-driver # AUR
