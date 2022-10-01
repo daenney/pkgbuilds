@@ -13,6 +13,7 @@ depends=(
     atool
     btrfs-progs
     ca-certificates
+    dbus-broker
     diff-so-fancy
     dmidecode
     dosfstools

@@ -79,4 +79,10 @@ post_install() {
 	enable systemd-resolved.service
 	enable sshd.service
 	enable fwupd.service
+
+	echo ":: systemd disabling: dbus.service"
+	systemctl disable -q "dbus.service"
+	enable dbus-broker.service
+	echo ":: systemd user global enabling: dbus-broker.service"
+	systemctl enable --user --global -q "dbus-broker.service"
 }
