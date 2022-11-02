@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.16
+pkgver=1.17
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -49,7 +49,7 @@ depends=(
     gnome-shell
     gnome-shell-extensions
     gnome-shell-extension-appindicator
-    gnome-shell-extension-freon-git # AUR
+    gnome-shell-extension-freon # AUR
     gnome-shell-extension-just-perfection-desktop # AUR
     gnome-shell-extension-nightthemeswitcher  # AUR
     gnome-software
