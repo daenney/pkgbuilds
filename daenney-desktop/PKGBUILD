@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.17
+pkgver=1.18
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -83,6 +83,7 @@ depends=(
     plymouth-git # AUR
     podman
     podman-docker
+    power-profiles-daemon
     gdm-plymouth-nox # AUR
     qgnomeplatform-qt5
     qgnomeplatform-qt6
