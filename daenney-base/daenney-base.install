@@ -79,6 +79,7 @@ post_install() {
 	enable systemd-resolved.service
 	enable sshd.service
 	enable fwupd.service
+	enable paccache.timer
 
 	echo ":: systemd disabling: dbus.service"
 	systemctl disable -q "dbus.service"

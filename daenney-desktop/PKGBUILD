@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.18
+pkgver=1.19
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -76,7 +76,6 @@ depends=(
     noto-fonts-extra
     nss-mdns
     onedrive-abraunegg # AUR
-    pacman-contrib
     pavucontrol
     phonon-qt5-gstreamer # needs to come before phonon-qt5, use gstreamer backend for HW accel
     phonon-qt5
@@ -92,7 +91,6 @@ depends=(
     shared-mime-info-gnome # AUR
     sushi
     system-config-printer
-    systemd-boot-pacman-hook # AUR
     tpm2-tools
     trash-cli
     ttf-jetbrains-mono
