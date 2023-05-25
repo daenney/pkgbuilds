@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.22
+pkgver=1.23
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -23,6 +23,7 @@ depends=(
     adw-gtk3 # AUR, set as Legacy theme in Tweaks
     arch-audit-gtk
     avahi
+    bash-language-server
     cni-plugins
     code
     dconf-editor
@@ -32,6 +33,7 @@ depends=(
     eog-plugins
     flatpak
     firefox
+    helix
     hunspell
     hunspell-en_gb
     hunspell-nl
@@ -61,6 +63,7 @@ depends=(
     gnome-video-effects
     gnome-weather
     go
+    gopls
     gstreamer
     gstreamer-vaapi
     gst-libav
@@ -92,14 +95,19 @@ depends=(
     shared-mime-info-gnome # AUR
     sushi
     system-config-printer
+    taplo
     tpm2-tools
     trash-cli
     ttf-jetbrains-mono
+    vscode-css-languageserver
+    vscode-html-languageserver
+    vscode-vscode-json-languageserver
     webp-pixbuf-loader
     wl-clipboard
     xorg-xwayland
     xdg-user-dirs-gtk
     xdg-utils
+    yaml-language-server
     zathura
     zathura-pdf-mupdf
 )
