@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1.3
+pkgver=1.4
 pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
@@ -39,8 +39,6 @@ depends=(
     pam-u2f
     pciutils
     pwgen
-    sbsigntools
-    sbupdate-git # AUR
     sudo
     systemd-boot-pacman-hook # AUR
     systemd-resolvconf
