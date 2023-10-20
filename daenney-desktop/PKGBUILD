@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.23
+pkgver=1.24
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -29,11 +29,8 @@ depends=(
     dconf-editor
     dhclient
     drawing
-    eog
-    eog-plugins
     flatpak
     firefox
-    helix
     hunspell
     hunspell-en_gb
     hunspell-nl
@@ -42,13 +39,15 @@ depends=(
     glfw-wayland
     glew
     gnome-backgrounds
-    gnome-control-center
     gnome-calculator
     gnome-characters
     gnome-color-manager
+    gnome-control-center
+    gnome-disk-utility
     gnome-firmware
     gnome-font-viewer
     gnome-keyring
+    gnome-maps
     gnome-menus
     gnome-shell
     gnome-shell-extensions
@@ -73,6 +72,9 @@ depends=(
     gst-plugin-pipewire
     gtk3
     gtk4
+    gvfs
+    gvfs-goa
+    loupe
     mousetweaks
     nautilus
     nftables
@@ -95,7 +97,6 @@ depends=(
     shared-mime-info-gnome # AUR
     sushi
     system-config-printer
-    taplo
     tpm2-tools
     trash-cli
     ttf-jetbrains-mono
