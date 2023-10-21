@@ -13,6 +13,7 @@ depends=(
     iwd
     networkmanager
     nm-connection-editor
+    snapshot
     usbguard
     wireless-regdb
 )
