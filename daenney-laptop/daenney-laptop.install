@@ -12,19 +12,26 @@ configure_usbguard() {
     fi
 }
 
+configure_regdomain() {
+	echo ':: configuring wireless regulatory domain'
+	file='/etc/conf.d/wireless-regdom'
+	sed -i '/WIRELESS_REGDOM="SE"/s/^#*//g' "$file"
+}
+
 disable_wpa_supplicant() {
     systemctl mask -q "wpa_supplicant.service"
     systemctl mask -q "wpa_supplicant@.service"
 }
 
 post_install() {
+    disable_wpa_supplicant
+
     configure_usbguard
+    configure_regdomain
 
     enable iwd.service
     enable firewalld.service
     enable NetworkManager.service
     enable usbguard.service
     enable bluetooth.service
-
-    disable_wpa_supplicant
 }
