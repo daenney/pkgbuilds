@@ -89,7 +89,6 @@ depends=(
     podman
     podman-docker
     power-profiles-daemon
-    gdm-plymouth-nox # AUR
     samsung-unified-driver # AUR
     seahorse    
     shared-mime-info-gnome # AUR
