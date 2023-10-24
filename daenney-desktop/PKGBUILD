@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.25
+pkgver=1.26
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -74,6 +74,7 @@ depends=(
     gtk4
     gvfs
     gvfs-goa
+    ldc
     loupe
     mousetweaks
     nautilus
