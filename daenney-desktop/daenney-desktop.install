@@ -28,9 +28,9 @@ configure_wayland() {
     file='/etc/environment'
     grep -qw '^MOZ_ENABLE_WAYLAND' "$file" || echo 'MOZ_ENABLE_WAYLAND=1' >> "$file"
     grep -qw '^XDG_SEGGION_TYPE' "$file" || echo 'XDG_SESSION_TYPE=wayland' >> "$file"
-    grep -qw '^QT_QPA_PLATFORM' "$file" || echo 'QT_QPA_PLATFORM=wayland' >> "$file"
+    grep -qw '^QT_QPA_PLATFORM' "$file" || echo 'QT_QPA_PLATFORM="wayland;xcb"' >> "$file"
     grep -qw '^CLUTTER_BACKEND' "$file" || echo 'CLUTTER_BACKEND=wayland' >> "$file"
-    grep -qw '^SDL_VIDEODRIVER' "$file" || echo 'SDL_VIDEODRIVER=wayland' >> "$file"
+    grep -qw '^SDL_VIDEODRIVER' "$file" || echo 'SDL_VIDEODRIVER="wayland,x11"' >> "$file"
     grep -qw '^_JAVA_AWT_WM_NONREPARENTING' "$file" || echo '_JAVA_AWT_WM_NONREPARENTING=1' >> "$file"
 }
 
