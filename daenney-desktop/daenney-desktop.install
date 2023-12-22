@@ -26,7 +26,6 @@ configure_hw_accel() {
 configure_wayland() {
     echo ':: configuring applications and toolkits to use Wayland backend'
     file='/etc/environment'
-    grep -qw '^MOZ_ENABLE_WAYLAND' "$file" || echo 'MOZ_ENABLE_WAYLAND=1' >> "$file"
     grep -qw '^XDG_SEGGION_TYPE' "$file" || echo 'XDG_SESSION_TYPE=wayland' >> "$file"
     grep -qw '^QT_QPA_PLATFORM' "$file" || echo 'QT_QPA_PLATFORM="wayland;xcb"' >> "$file"
     grep -qw '^CLUTTER_BACKEND' "$file" || echo 'CLUTTER_BACKEND=wayland' >> "$file"
