@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.27
+pkgver=1.28
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -86,7 +86,7 @@ depends=(
     pavucontrol
     phonon-qt5-gstreamer # needs to come before phonon-qt5, use gstreamer backend for HW accel
     phonon-qt5
-    plymouth-git # AUR
+    plymouth
     podman
     podman-docker
     power-profiles-daemon
