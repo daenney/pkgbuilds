@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
 pkgver=1.28
-pkgrel=1
+pkgrel=2
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -36,7 +36,7 @@ depends=(
     hunspell-nl
     hunspell-sv # AUR
     gdm
-    glfw-wayland
+    glfw
     glew
     gnome-backgrounds
     gnome-calculator
