@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1.5
+pkgver=1.6
 pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
@@ -15,7 +15,7 @@ depends=(
     ca-certificates
     dbus-broker-units
     dbus-broker
-    diff-so-fancy
+    difftastic
     dmidecode
     dosfstools
     dnssec-anchors
