@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
 pkgver=1.28
-pkgrel=2
+pkgrel=3
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -117,13 +117,6 @@ optdepends=(
     'amd-graphics: AMD GPU support'
 )
 install=${pkgname}.install
-source=(
-    'raop-discover.conf'
-)
 sha256sums=(
     'e4fae8ce300d220d6850d53bb62620887f743f171345eb0c558a7b2c9d3e8988'
 )
-
-package() {
-    install -D -m0644 'raop-discover.conf' "${pkgdir}/etc/pipewire/pipewire.conf.d/raop-discover.conf"
-}
