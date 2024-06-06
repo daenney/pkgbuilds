@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.28
+pkgver=1.29
 pkgrel=3
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -28,7 +28,6 @@ depends=(
     code
     dconf-editor
     dhclient
-    drawing
     flatpak
     firefox
     hunspell
@@ -84,6 +83,7 @@ depends=(
     nss-mdns
     onedrive-abraunegg # AUR
     pavucontrol
+    pinta
     phonon-qt5-gstreamer # needs to come before phonon-qt5, use gstreamer backend for HW accel
     phonon-qt5
     plymouth
