@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.29
-pkgrel=3
+pkgver=1.30
+pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -20,7 +20,7 @@ depends=(
     cantarell-fonts
     xdg-desktop-portal-gnome # needs to come early to avoid provider prompt for xdg-desktop-impl
     xdg-desktop-portal
-    adw-gtk3 # AUR, set as Legacy theme in Tweaks
+    adw-gtk-theme # set theme in Tweaks
     arch-audit-gtk
     avahi
     bash-language-server
