@@ -1,7 +1,7 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
 pkgver=1.30
-pkgrel=1
+pkgrel=2
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
@@ -118,5 +118,5 @@ optdepends=(
 )
 install=${pkgname}.install
 sha256sums=(
-    'e4fae8ce300d220d6850d53bb62620887f743f171345eb0c558a7b2c9d3e8988'
+    '7b493f810a39a55a99fa998623f944b6cd834759f3be46368d7d85ef28e4ad68'
 )
