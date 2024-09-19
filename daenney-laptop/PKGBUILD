@@ -1,5 +1,5 @@
 pkgname=daenney-laptop
-pkgver=1.1
+pkgver=1.2
 pkgrel=1
 pkgdesc='My default laptop'
 url="https://github.com/daenney/pkgbuilds"
@@ -9,10 +9,10 @@ depends=(
     daenney-desktop
     bluez
     bluez-utils
-    firewalld
     iwd
     networkmanager
     nm-connection-editor
+    opensnitch
     snapshot
     usbguard
     wireless-regdb
