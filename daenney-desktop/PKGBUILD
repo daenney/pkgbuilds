@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.31
+pkgver=1.32
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -56,7 +56,6 @@ depends=(
     gnome-shell-extension-nightthemeswitcher  # AUR
     gnome-software
     gnome-system-monitor
-    gnome-terminal
     gnome-tweaks
     gnome-video-effects
     gnome-weather
