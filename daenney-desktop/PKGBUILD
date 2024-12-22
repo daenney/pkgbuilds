@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.32
+pkgver=1.33
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -28,6 +28,7 @@ depends=(
     code
     dconf-editor
     dhclient
+    evolution-data-server # gnome wants this
     flatpak
     firefox
     hunspell
@@ -91,12 +92,10 @@ depends=(
     power-profiles-daemon
     samsung-unified-driver # AUR
     seahorse    
-    shared-mime-info-gnome # AUR
     sushi
     system-config-printer
     tpm2-tools
     trash-cli
-    ttf-jetbrains-mono
     vscode-css-languageserver
     vscode-html-languageserver
     vscode-json-languageserver
