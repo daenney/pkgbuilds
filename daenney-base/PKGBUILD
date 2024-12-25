@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1.6
+pkgver=1.7
 pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
@@ -31,13 +31,12 @@ depends=(
     linux-firmware
     lm_sensors
     man-pages
+    mergiraf
     mokutil # AUR
-    mosh
     neovim
     openssh
     openssl
     pacman-contrib
-    pam-u2f
     pciutils
     pwgen
     sudo
