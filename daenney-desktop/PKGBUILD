@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.33
+pkgver=1.34
 pkgrel=1
 pkgdesc='My default desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -28,6 +28,7 @@ depends=(
     code
     dconf-editor
     dhclient
+    element-desktop
     evolution-data-server # gnome wants this
     flatpak
     firefox
@@ -49,6 +50,7 @@ depends=(
     gnome-keyring
     gnome-maps
     gnome-menus
+    gnome-power-manager
     gnome-shell
     gnome-shell-extensions
     gnome-shell-extension-appindicator

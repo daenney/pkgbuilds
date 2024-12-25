@@ -1,5 +1,5 @@
 pkgname=daenney-laptop
-pkgver=1.2
+pkgver=1.3
 pkgrel=1
 pkgdesc='My default laptop'
 url="https://github.com/daenney/pkgbuilds"
@@ -9,8 +9,10 @@ depends=(
     daenney-desktop
     bluez
     bluez-utils
+    easyeffects
     iwd
     networkmanager
+    network-manager-applet
     nm-connection-editor
     opensnitch
     snapshot

@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1.7
+pkgver=1.8
 pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
@@ -10,11 +10,14 @@ depends=(
     mkinitcpio # needs to be first in order to avoid provider prompt for initramfs
     man-db
     base
+    1password # AUR
     atool
+    brightnessctl
     btrfs-progs
     ca-certificates
     dbus-broker-units
     dbus-broker
+    ddcci-driver-linux-dkms # AUR
     difftastic
     dmidecode
     dosfstools
@@ -26,20 +29,26 @@ depends=(
     fwupd
     fzf
     git
+    htop
+    hwdetect
+    jq
     libfido2
     linux
     linux-firmware
     lm_sensors
+    lshw
     man-pages
     mergiraf
     mokutil # AUR
     neovim
+    nvme-cli
     openssh
     openssl
     pacman-contrib
     pciutils
     pwgen
     sudo
+    ssh-tpm-agent
     systemd-boot-pacman-hook # AUR
     systemd-resolvconf
     the_silver_searcher
