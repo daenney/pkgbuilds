@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1.8
+pkgver=1.10
 pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
@@ -17,11 +17,11 @@ depends=(
     ca-certificates
     dbus-broker-units
     dbus-broker
-    ddcci-driver-linux-dkms # AUR
     difftastic
+    dkms
     dmidecode
-    dosfstools
     dnssec-anchors
+    dosfstools
     dog
     efitools
     efivar
@@ -35,6 +35,7 @@ depends=(
     libfido2
     linux
     linux-firmware
+    linux-headers
     lm_sensors
     lshw
     man-pages
