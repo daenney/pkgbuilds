@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1.10
+pkgver=1.11
 pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
@@ -10,7 +10,6 @@ depends=(
     mkinitcpio # needs to be first in order to avoid provider prompt for initramfs
     man-db
     base
-    1password # AUR
     atool
     brightnessctl
     btrfs-progs
@@ -38,6 +37,7 @@ depends=(
     linux-headers
     lm_sensors
     lshw
+    lsof
     man-pages
     mergiraf
     mokutil # AUR
@@ -50,6 +50,7 @@ depends=(
     pwgen
     sudo
     ssh-tpm-agent
+    strace
     systemd-boot-pacman-hook # AUR
     systemd-resolvconf
     the_silver_searcher
