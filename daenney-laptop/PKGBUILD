@@ -1,5 +1,5 @@
 pkgname=daenney-laptop
-pkgver=1.3
+pkgver=1.4
 pkgrel=1
 pkgdesc='My default laptop'
 url="https://github.com/daenney/pkgbuilds"
@@ -7,10 +7,13 @@ arch=('any')
 license=('MIT')
 depends=(
     daenney-desktop
+    ardour # easyeffects
+    calf # easyeffects
     bluez
     bluez-utils
     easyeffects
     iwd
+    lsp-plugins-lv2 # easyeffects
     networkmanager
     network-manager-applet
     nm-connection-editor
