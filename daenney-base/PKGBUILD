@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1.11
+pkgver=1.12
 pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
@@ -53,6 +53,7 @@ depends=(
     strace
     systemd-boot-pacman-hook # AUR
     systemd-resolvconf
+    systemd-ukify
     the_silver_searcher
     tmux
     unzip
