@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-base
-pkgver=1.12
+pkgver=1.13
 pkgrel=1
 pkgdesc='Packages and configuration for all my systems'
 url="https://github.com/daenney/pkgbuilds"
@@ -40,7 +40,6 @@ depends=(
     lsof
     man-pages
     mergiraf
-    mokutil # AUR
     neovim
     nvme-cli
     openssh
@@ -48,6 +47,7 @@ depends=(
     pacman-contrib
     pciutils
     pwgen
+    sbsigntools
     sudo
     ssh-tpm-agent
     strace
@@ -60,6 +60,7 @@ depends=(
     usbutils
     which
     whois
+    xfsprogs
 )
 optdepends=(
     'amd-cpu: AMD CPU support'
