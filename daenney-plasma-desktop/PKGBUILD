@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-plasma-desktop
-pkgver=1.0
+pkgver=1.1
 pkgrel=1
 pkgdesc='My KDE desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -14,6 +14,7 @@ depends=(
     qt6-multimedia-ffmpeg # konsole
     liblphobos
     plasma-meta
+    1password
     arch-audit-gtk
     ark
     bash-language-server
