@@ -1,0 +1,27 @@
+enable() {
+	if ! systemctl is-enabled -q "$1"; then
+        echo ":: systemd enabling: $1"
+		systemctl enable -q "$1"
+	fi
+}
+
+configure_avahi() {
+    echo ':: configuring mDNS'
+    file='/etc/nsswitch.conf'
+    sed -i 's/mymachines resolve/mymachines mdns_minimal [NOTFOUND=return] resolve/g' "$file"
+}
+
+configure_regdomain() {
+	echo ':: configuring wireless regulatory domain'
+	file='/etc/conf.d/wireless-regdom'
+	sed -i '/WIRELESS_REGDOM="SE"/s/^#*//g' "$file"
+}
+
+post_install() {
+    configure_avahi
+    configure_regdomain
+
+    enable sddm.service
+    enable NetworkManager.service
+    enable avahi-daemon.service
+}
