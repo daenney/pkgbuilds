@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-plasma-desktop
-pkgver=1.1
+pkgver=1.2
 pkgrel=1
 pkgdesc='My KDE desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -18,9 +18,9 @@ depends=(
     arch-audit-gtk
     ark
     bash-language-server
-    code
     crun # for podman
     darkman
+    delve
     dolphin
     element-desktop
     flatpak
@@ -32,6 +32,7 @@ depends=(
     go
     gopls
     gst-plugin-va # Ensure HW accel for gstreamer
+    kate
     kde-inotify-survey
     konsole
     nftables
@@ -48,6 +49,7 @@ depends=(
     podman
     power-profiles-daemon
     samsung-unified-driver # AUR
+    solaar
     spectacle # until 6.3, then plasma-meta has it
     system-config-printer
     tesseract-data-eng # zathuura-mupdf
