@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-plasma-desktop
-pkgver=1.2
+pkgver=1.3
 pkgrel=1
 pkgdesc='My KDE desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -32,9 +32,13 @@ depends=(
     go
     gopls
     gst-plugin-va # Ensure HW accel for gstreamer
+    kaddressbook
     kate
     kde-inotify-survey
+    kmail
     konsole
+    marksman
+    merkuro
     nftables
     noto-fonts
     noto-fonts-emoji
