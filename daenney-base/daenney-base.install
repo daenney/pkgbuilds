@@ -79,5 +79,6 @@ post_install() {
 	enable systemd-resolved.service
 	enable sshd.service
 	enable fwupd.service
+	enable fstrim.timer
 	enable paccache.timer
 }
