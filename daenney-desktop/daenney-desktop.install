@@ -23,7 +23,6 @@ configure_wayland() {
     grep -qw '^QT_QPA_PLATFORM' "$file" || echo 'QT_QPA_PLATFORM="wayland;xcb"' >> "$file"
     grep -qw '^CLUTTER_BACKEND' "$file" || echo 'CLUTTER_BACKEND=wayland' >> "$file"
     grep -qw '^SDL_VIDEODRIVER' "$file" || echo 'SDL_VIDEODRIVER="wayland,x11"' >> "$file"
-    grep -qw '^GTK_USE_PORTAL' "$file" || echo 'GTK_USE_PORTAL=1' >> "$file"
     grep -qw '^ELECTRON_OZONE_PLATFORM_HINT' "$file" || echo 'ELECTRON_OZONE_PLATFORM_HINT="wayland"' >> "$file"
 }
 
