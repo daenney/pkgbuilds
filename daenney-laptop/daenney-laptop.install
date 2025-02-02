@@ -29,7 +29,6 @@ post_install() {
     configure_usbguard
     configure_regdomain
 
-    enable iwd.service
     enable firewalld.service
     enable NetworkManager.service
     enable usbguard.service
