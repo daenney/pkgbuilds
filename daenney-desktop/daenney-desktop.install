@@ -17,35 +17,18 @@ configure_editor() {
     grep -qw '^EDITOR' "$file" || echo 'EDITOR=nvim' >> "$file"
 }
 
-configure_hw_accel() {
-    echo ':: configuring hardware accelerated video'
-    file='/etc/environment'
-    grep -qw '^GST_VAAPI_ALL_DRIVERS' "$file" || echo 'GST_VAAPI_ALL_DRIVERS=1' >> "$file"
-}
-
 configure_wayland() {
     echo ':: configuring applications and toolkits to use Wayland backend'
     file='/etc/environment'
-    grep -qw '^XDG_SEGGION_TYPE' "$file" || echo 'XDG_SESSION_TYPE=wayland' >> "$file"
     grep -qw '^QT_QPA_PLATFORM' "$file" || echo 'QT_QPA_PLATFORM="wayland;xcb"' >> "$file"
     grep -qw '^CLUTTER_BACKEND' "$file" || echo 'CLUTTER_BACKEND=wayland' >> "$file"
     grep -qw '^SDL_VIDEODRIVER' "$file" || echo 'SDL_VIDEODRIVER="wayland,x11"' >> "$file"
-}
-
-configure_emoji() {
-    echo ':: enabling Emoji font'
-    ln -sf /etc/fonts/conf.avail/75-joypixels.conf /etc/fonts/conf.d/75-joypixels.conf
-}
-
-configure_plymouth() {
-    echo ':: setting Plymouth theme to BGRT'
-    plymouth-set-default-theme bgrt
+    grep -qw '^GTK_USE_PORTAL' "$file" || echo 'GTK_USE_PORTAL=1' >> "$file"
+    grep -qw '^ELECTRON_OZONE_PLATFORM_HINT' "$file" || echo 'ELECTRON_OZONE_PLATFORM_HINT="wayland"' >> "$file"
 }
 
 post_install() {
-    configure_emoji
-    configure_hw_accel
-    configure_plymouth
+    configure_avahi
     configure_wayland
     configure_editor
 

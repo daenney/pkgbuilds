@@ -1,34 +1,21 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.36
+pkgver=1.37
 pkgrel=1
-pkgdesc='My default desktop'
+pkgdesc='My default Gnome desktop'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
 license=('MIT')
 depends=(
     daenney-base
-    wireplumber
-    pipewire
-    pipewire-alsa
-    pipewire-jack
-    pipewire-pulse
-    pipewire-zeroconf
-    pipewire-v4l2
-    ttf-joypixels
-    noto-fonts
-    cantarell-fonts
-    xdg-desktop-portal-gnome # needs to come early to avoid provider prompt for xdg-desktop-impl
-    xdg-desktop-portal
     1password # AUR
     adw-gtk-theme # set theme in Tweaks
     arch-audit-gtk
     avahi
     bash-language-server
-    cni-plugins
     code
+    crun
     dconf-editor
-    dhclient
     element-desktop
     evolution-data-server # gnome wants this
     flatpak
@@ -38,20 +25,10 @@ depends=(
     hunspell-nl
     hunspell-sv # AUR
     gdm
-    glfw
-    glew
     gnome-backgrounds
-    gnome-calculator
-    gnome-characters
-    gnome-color-manager
     gnome-control-center
     gnome-disk-utility
-    gnome-firmware
-    gnome-font-viewer
     gnome-keyring
-    gnome-maps
-    gnome-menus
-    gnome-power-manager
     gnome-shell
     gnome-shell-extensions
     gnome-shell-extension-appindicator
@@ -61,40 +38,33 @@ depends=(
     gnome-software
     gnome-system-monitor
     gnome-tweaks
-    gnome-video-effects
-    gnome-weather
     go
     gopls
-    gstreamer
-    gstreamer-vaapi
     gst-libav
-    gst-plugins-bad
-    gst-plugins-good
-    gst-plugins-ugly 
+    gst-plugin-libcamera
     gst-plugin-pipewire
-    gtk3
-    gtk4
+    gst-plugin-va
     gvfs
+    gvfs-afc
     gvfs-goa
-    ldc
-    loupe
-    mousetweaks
     nautilus
+    noto-fonts
     noto-fonts-cjk
     noto-fonts-extra
+    noto-fonts-emoji
     nss-mdns
     onedrive-abraunegg # AUR
     pavucontrol
-    pinta
-    phonon-qt5-gstreamer # needs to come before phonon-qt5, use gstreamer backend for HW accel
-    phonon-qt5
+    pipewire-audio
+    pipewire-alsa
+    pipewire-jack
+    pipewire-libcamera
+    pipewire-pulse
+    pipewire-v4l2
     plymouth
     podman
-    podman-docker
     power-profiles-daemon
     samsung-unified-driver # AUR
-    seahorse    
-    sushi
     system-config-printer
     tpm2-tools
     trash-cli
@@ -107,8 +77,8 @@ depends=(
     xdg-user-dirs-gtk
     xdg-utils
     yaml-language-server
-    zathura
     zathura-pdf-mupdf
+    zathura
 )
 optdepends=(
     'intel-cpu: Intel CPU support'
