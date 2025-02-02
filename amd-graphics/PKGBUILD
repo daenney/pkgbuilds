@@ -1,17 +1,17 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=amd-graphics
-pkgver=1.4
-pkgrel=2
+pkgver=1.5
+pkgrel=1
 pkgdesc='Packages and configuration for systems with AMD GPUs'
 url="https://github.com/daenney/pkgbuilds"
 arch=('any')
 license=('MIT')
 depends=(
     amdgpu_top # AUR
-    mesa 
-    vulkan-radeon
     libva-utils
-    vdpauinfo
+    mesa
+    mesa-utils
+    vulkan-radeon
 )
 
 install=${pkgname}.install
