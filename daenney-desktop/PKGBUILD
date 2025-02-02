@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.39
+pkgver=1.40
 pkgrel=1
 pkgdesc='My default Gnome desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -29,6 +29,7 @@ depends=(
     gnome-backgrounds
     gnome-control-center
     gnome-disk-utility
+    gnome-initial-setup
     gnome-keyring
     gnome-shell
     gnome-shell-extensions
