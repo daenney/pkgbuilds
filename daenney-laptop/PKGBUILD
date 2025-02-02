@@ -1,5 +1,5 @@
 pkgname=daenney-laptop
-pkgver=1.4
+pkgver=1.5
 pkgrel=1
 pkgdesc='My default laptop'
 url="https://github.com/daenney/pkgbuilds"
@@ -23,20 +23,16 @@ depends=(
     wireless-regdb
 )
 install=daenney-laptop.install
-
 source=(
-    'dhcp-client.conf'
     'privacy.conf'
     'iwd.conf'
 )
 sha256sums=(
-    'b836fcc57962c8e95940ec943fc51e505b9daeffe0ea37d489ea171790cdc453'
     '6f0ac6afd833b89c6e7ed2d7ada32b241d9e279fcd7a6e39a6c9feb77a15160e'
     '654d07fff7855a7c51cf5c55478df12491e64dda5c87fbb14f1d44faf93419eb'
 )
 
 package() {
-    install -D -m0644 'dhcp-client.conf' "${pkgdir}/etc/NetworkManager/conf.d/dhcp-client.conf"
     install -D -m0644 'privacy.conf' "${pkgdir}/etc/NetworkManager/conf.d/privacy.conf"
     install -D -m0644 'iwd.conf' "${pkgdir}/etc/NetworkManager/conf.d/iwd.conf"
 }
