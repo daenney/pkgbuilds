@@ -1,6 +1,6 @@
 # Maintainer: Daniele Sluijters <daenney@users.noreply.github.com>
 pkgname=daenney-desktop
-pkgver=1.41
+pkgver=1.42
 pkgrel=1
 pkgdesc='My default Gnome desktop'
 url="https://github.com/daenney/pkgbuilds"
@@ -14,6 +14,7 @@ depends=(
     avahi
     bash-language-server
     code
+    cpupower
     crun
     delve
     dconf-editor
@@ -71,7 +72,6 @@ depends=(
     samsung-unified-driver # AUR
     staticcheck
     system-config-printer
-    tesseract-data-eng # zathura-pdf-mupd
     tpm2-tools
     trash-cli
     vscode-css-languageserver
@@ -84,8 +84,6 @@ depends=(
     xdg-user-dirs-gtk
     xdg-utils
     yaml-language-server
-    zathura-pdf-mupdf
-    zathura
 )
 optdepends=(
     'intel-cpu: Intel CPU support'
