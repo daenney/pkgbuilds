@@ -7,7 +7,7 @@ url="https://github.com/daenney/pkgbuilds"
 arch=('any')
 license=('MIT')
 depends=(
-    amdgpu_top # AUR
+    amdgpu_top
     libva-utils
     mesa
     mesa-utils
